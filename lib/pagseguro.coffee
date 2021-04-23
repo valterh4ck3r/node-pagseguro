@@ -83,6 +83,14 @@ class pagseguro
                 @obj.sender.address.district = shippingInfo.district if shippingInfo.district?
         @
 
+    # Configura custo do frete
+    setShippingCost: (cost) ->
+        switch @mode
+            when 'payment', 'sandbox' , 'subscription'
+                @obj.shipping =
+                    cost : cost
+        @
+
     # Termos da assinatura
     preApproval: (preApprovalInfo) ->
         if @mode is 'subscription'
