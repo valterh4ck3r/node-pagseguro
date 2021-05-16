@@ -95,7 +95,7 @@ class pagseguro
     setAddressRequired: (addressRequired) ->
         switch @mode
             when 'payment', 'sandbox' , 'subscription'
-                @obj.addressRequired =
+                @obj.shipping =
                     addressRequired : addressRequired
         @
 
