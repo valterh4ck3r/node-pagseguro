@@ -91,6 +91,14 @@ class pagseguro
                     cost : cost
         @
 
+    # Configura obrigatoriedade do endereço de entrega
+    setAddressRequired: (addressRequired) ->
+        switch @mode
+            when 'payment', 'sandbox' , 'subscription'
+                @obj.addressRequired =
+                    addressRequired : addressRequired
+        @
+
     # Termos da assinatura
     preApproval: (preApprovalInfo) ->
         if @mode is 'subscription'
