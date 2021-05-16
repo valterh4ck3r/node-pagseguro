@@ -97,6 +97,9 @@ class pagseguro
             when 'payment', 'sandbox' , 'subscription'
                 @obj.shipping =
                     addressRequired : addressRequired
+                @obj.shipping.address =
+                    required : addressRequired
+                    addressRequired : addressRequired
         @
 
     # Termos da assinatura
