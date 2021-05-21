@@ -91,6 +91,13 @@ class pagseguro
                     cost : cost
         @
 
+    # Configura custo do frete
+    setExtraAmount: (cost) ->
+        switch @mode
+            when 'payment', 'sandbox' , 'subscription'
+                @obj.extraAmount = cost
+        @
+
     # Configura obrigatoriedade do endereço de entrega
     setAddressRequired: (addressRequired) ->
         switch @mode
